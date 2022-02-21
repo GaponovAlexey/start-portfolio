@@ -17,13 +17,22 @@ const maxSplatRadius = bowser.mobile ? 0.001 : 0.005;
 const yOffset = bowser.mobile ? -0.1 * window.innerHeight : 0;
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-
+  componentDidMount() {
     disableBodyScroll(this._body);
 
     this._reset();
     this._tick();
+
+    this._typed = new Typed(this._subtitle, {
+      typeSpeed: 25,
+      backSpeed: 50,
+      backDelay: 2000,
+      fadeOut: true,
+      shuffle: false,
+      loop: false,
+      showCursor: false,
+      strings: ["Привет", "Есть вопросы пишите"],
+    });
   }
 
   componentWillMount() {
@@ -67,9 +76,7 @@ export default class App extends Component {
     this._subtitle = ref;
   };
 
-  _bodyRef = (ref) => {
-    this._body = ref;
-  };
+  _bodyRef = (ref) => {this._body = ref};
 
   _reset() {
     if (this._animation) {
