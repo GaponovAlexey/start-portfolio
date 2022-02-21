@@ -35,12 +35,12 @@ export default class App extends Component {
     });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this._time = Date.now();
     this._direction = 1;
   }
 
-  componentWillUnmount() {
+  componentDidMount() {
     if (this._tickRaf) {
       raf.cancel(this._tickRaf);
       this._tickRaf = null;
