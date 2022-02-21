@@ -31,16 +31,16 @@ export default class App extends Component {
       shuffle: false,
       loop: false,
       showCursor: false,
-      strings: ["Привет", "есть вопросы пишите"],
+      strings: ["Привет", "Есть вопросы пишите"],
     });
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this._time = Date.now();
     this._direction = 1;
   }
 
-  componentDidMount() {
+  componentWillUnmount() {
     if (this._tickRaf) {
       raf.cancel(this._tickRaf);
       this._tickRaf = null;
