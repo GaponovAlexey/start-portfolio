@@ -17,7 +17,7 @@ const maxSplatRadius = bowser.mobile ? 0.001 : 0.005;
 const yOffset = bowser.mobile ? -0.1 * window.innerHeight : 0;
 
 export default class App extends Component {
-  constructor(props) {
+  constructor(_reset, _tick) {
     super(props);
 
     disableBodyScroll(this._body);
