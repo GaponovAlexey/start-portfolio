@@ -59,9 +59,6 @@ const actions = [
 ];
 
 export default class App extends Component {
-  static propTypes = {
-    classsName: PropTypes.string,
-  };
 
   render() {
     const { className, ...rest } = this.props;
