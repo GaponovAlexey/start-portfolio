@@ -6,6 +6,7 @@ const home = () => {
     <div>
       {/* <App /> */}
       <Page2 />
+      
     </div>
   );
 };
