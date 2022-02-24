@@ -17,6 +17,8 @@ const maxSplatRadius = bowser.mobile ? 0.001 : 0.005;
 const yOffset = bowser.mobile ? -0.1 * window.innerHeight : 0;
 
 export default class App extends Component {
+  inputRef = React.createRef();
+
   componentDidMount() {
     disableBodyScroll(this._body);
 
@@ -76,7 +78,9 @@ export default class App extends Component {
     this._subtitle = ref;
   };
 
-  _bodyRef = (ref) => {this._body = ref};
+  _bodyRef = (ref) => {
+    this._body = ref;
+  };
 
   _reset() {
     if (this._animation) {
