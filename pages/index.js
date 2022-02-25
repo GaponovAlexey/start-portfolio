@@ -1,13 +1,14 @@
-import App from "./page1";
-import Page2 from "./page2";
+import FluidAnimation from "react-fluid-animation";
 
-const home = () => {
+const Home = () => {
   return (
     <div>
-      {/* <App /> */}
-      <Page2 />
-      
+      <FluidAnimation style={{ height: "100vh" }} />
+      <div style={{ color: "red", position: "absolute", top: 0, left: 0 }}>
+        YOOOOU
+      </div>
     </div>
   );
 };
 
+export default Home;
